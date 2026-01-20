@@ -1,0 +1,204 @@
+/* Body & Header */
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #0d0d0d;
+  color: #00ffff;
+  margin: 0;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2em;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  margin-bottom: 30px;
+}
+
+/* Columns container */
+#chains-columns {
+  display: flex;
+  gap: 30px;
+  justify-content: center; /* center columns */
+}
+
+/* Each column */
+.chains-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* space between chains */
+}
+
+/* Chain container */
+.chain-container {
+  background-color: #111;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* Blockchain container (blocks on top) */
+.blockchain-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 10px;
+}
+
+.blockchain {
+  display: flex;
+  gap: 15px;
+}
+
+/* Blocks */
+.block {
+  width: 180px;
+  min-height: 140px;
+  max-height: 180px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.5s, border-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #00ffff;
+}
+
+/* Front & back of block */
+.block .front, .block .back {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.block .front {
+  background-color: #111;
+  color: #00ffff;
+}
+
+.block .back {
+  background-color: #222;
+  color: #ffdd00;
+  transform: rotateY(180deg);
+}
+
+.block.flip {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+/* Invalid block */
+.block.invalid {
+  border-color: red !important;
+  box-shadow: 0 0 15px red !important;
+}
+
+/* Block text */
+.block p {
+  font-size: 12px;
+  margin: 2px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Connecting arrow between blocks */
+.block:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 2px;
+  background: currentColor;
+}
+
+.block.invalid::before {
+  background: red;
+}
+
+/* Chain Title & Controls below blocks */
+.chain-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.chain-title img {
+  width: 24px;
+  height: 24px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+button {
+  padding: 6px 12px;
+  background-color: #00ffff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00bbbb;
+}
+
+/* Scrollbar for horizontal block scrolling */
+.blockchain-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.blockchain-container::-webkit-scrollbar-thumb {
+  background-color: #00ffff;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .block {
+    width: 150px;
+    min-height: 120px;
+  }
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2em;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
+
+.header-logo {
+  width: 40px;
+  height: 40px;
+}
+
+
+
