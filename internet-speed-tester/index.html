@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Internet Speed Tester</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Internet Speed Test</h1>
+    <button id="themeToggle">🌙 Dark Mode</button>
+
+
+    <div class="speedometer">
+      <div class="circle">
+        <div class="needle" id="needle"></div>
+        <div class="center"></div>
+      </div>
+      <div class="speed-value">
+        <span id="speed">0</span> Mbps
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <p>Download</p>
+        <h3 id="download">0 Mbps</h3>
+      </div>
+      <div class="stat">
+        <p>Upload</p>
+        <h3 id="upload">0 Mbps</h3>
+      </div>
+      <div class="stat">
+        <p>Ping</p>
+        <h3 id="ping">0 ms</h3>
+      </div>
+    </div>
+       
+    
+    <h2>Test History</h2>
+       <ul id="history"></ul>
+
+
+    <div class="buttons">
+      <button id="start">Start Test</button>
+      <button id="stop">Stop</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.speedometer {
+  margin: 30px auto;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border: 10px solid #1e293b;
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+}
+
+.needle {
+  width: 4px;
+  height: 90px;
+  background: red;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: rotate(-90deg);
+  transition: transform 0.2s ease;
+}
+
+.center {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.speed-value {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.stat {
+  background: #1e293b;
+  padding: 10px;
+  border-radius: 8px;
+  width: 30%;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  margin: 0 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#start {
+  background: #22c55e;
+}
+
+#stop {
+  background: #ef4444;
+  color: white;
+}
+
+/* Light Theme */
+body.light {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+body.light .stat,
+body.light .circle {
+  background: #e5e7eb;
+  border-color: #cbd5f5;
+}
+
+body.light button {
+  color: #000;
+}
+
+#history {
+  list-style: none;
+  margin-top: 15px;
+  padding: 0;
+}
+
+#history li {
+  background: #1e293b;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+body.light #history li {
+  background: #e5e7eb;
+  color: #000;
+}
+
+
